@@ -1,3 +1,4 @@
+package application;
 public class ForEach {
     static void main(String[] args){
         // Laço for each
