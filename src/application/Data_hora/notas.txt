@@ -1,0 +1,9 @@
+Operações com data-hora
+
+#Instanciação
+
+1) Data atual -> Data-hora 
+2) Texto ISO 8601 -> Data-hora
+3) Data formatada -> Data-hora
+4) dia-mês-ano-[hora] -> Data-hora local
+
