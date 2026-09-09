@@ -26,7 +26,7 @@ public class data {
 
             Date d1 = new Date();
 
-            System.out.println("Loucura");
+            System.out.println("Loucura!!!");
 
             
         } catch (ParseException e) {
