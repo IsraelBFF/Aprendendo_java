@@ -1,4 +1,4 @@
-package entities;
+package entities.Exercicio_worker;
 
 public class Department {
     private String name;

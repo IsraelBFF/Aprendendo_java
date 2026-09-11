@@ -1,4 +1,4 @@
-package entities;
+package entities.Exercicio_worker;
 
 import entities.enums.WorkerLevel;
 

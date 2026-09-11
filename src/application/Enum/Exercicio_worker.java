@@ -1,7 +1,7 @@
 package application.Enum;
 
 import entities.enums.WorkerLevel;
-import entities.*;
+import entities.Exercicio_worker.*;
 
 import java.text.*;
 import java.util.*;
