@@ -1,9 +1,12 @@
-package entities.Exercicio_poster;
+package entities.entities_poster;
 
 import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class Poster {
+    SimpleDateFormat f1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
     private Date moment;
     private String title;
     private String content;
@@ -26,8 +29,9 @@ public class Poster {
 
     // Methods getters and setters
 
-    public Date getMoment(){
-        return moment;
+    public String getMoment(){
+        String momentStr = f1.format(moment);
+        return momentStr;
     }
 
     public void setMoment(Date moment){
@@ -56,6 +60,10 @@ public class Poster {
 
     public void setLikes(Integer likes){
         this.likes = likes;
+    }
+
+    public ArrayList<Comment> getComments(){
+        return comments;
     }
 
     // Methods

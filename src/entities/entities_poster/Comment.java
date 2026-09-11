@@ -1,4 +1,4 @@
-package entities.Exercicio_poster;
+package entities.entities_poster;
 
 public class Comment {
 
