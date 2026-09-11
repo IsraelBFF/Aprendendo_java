@@ -1,9 +1,9 @@
 package entities;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class HourContract {
-    private LocalDate date;
+    private Date date;
     private Double valuePerHour;
     private Integer hours;
 
@@ -13,7 +13,7 @@ public class HourContract {
         
     }
 
-    public HourContract(LocalDate date, Double valuePerHour, Integer hours){
+    public HourContract(Date date, Double valuePerHour, Integer hours){
         this.date = date;
         this.valuePerHour = valuePerHour;
         this.hours = hours;
@@ -21,11 +21,11 @@ public class HourContract {
 
     // Getters and Setters
 
-    public LocalDate getDate(){
+    public Date getDate(){
         return date;
     }
 
-    public void setDate(LocalDate date){
+    public void setDate(Date date){
         this.date = date;
     }
 

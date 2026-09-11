@@ -4,13 +4,11 @@ import entities.enums.WorkerLevel;
 import entities.*;
 
 import java.text.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Exercicio_worker {
     static void main(String[] args){
-        DateTimeFormatter dft1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         
         Scanner sc = new Scanner(System.in);
         
@@ -35,20 +33,24 @@ public class Exercicio_worker {
         for(int i = 0 ; i < qntdContracts ; i++){
             System.out.println("\nEnter contract #" + (i+1) + " data:");
            
-            System.out.print("Date (dd/mm/yyyy): ");
-            String dateContract = sc.next();
-            
-            System.out.print("Value per hour: ");
-            Double valuePerHour = sc.nextDouble();
-            
-            System.out.print("Duration (hours): ");
-            Integer duration = sc.nextInt();
+            try{
+                System.out.print("Date (dd/mm/yyyy): ");
+                Date dateContract = sdf.parse(sc.next());
 
-            LocalDate date = LocalDate.parse(dateContract, dft1);
+                System.out.print("Value per hour: ");
+                double valuePerHour = sc.nextDouble();
+                
+                System.out.print("Duration (hours): ");
+                int duration = sc.nextInt();
 
-            HourContract contract = new HourContract(date, valuePerHour, duration);
+                HourContract contract = new HourContract(dateContract, valuePerHour, duration);
 
-            worker.addContract(contract);
+                worker.addContract(contract);
+            } catch (ParseException e){
+
+            }
+
+
         }
 
         try{
@@ -62,16 +64,14 @@ public class Exercicio_worker {
             Calendar dateIncome = Calendar.getInstance();
             dateIncome.setTime(dI);
             
-            int month = dateIncome.get(Calendar.MONTH);
-            int year =  dateIncome.get(Calendar.YEAR);
+            int month = 1 + dateIncome.get(Calendar.MONTH);
+            int year = dateIncome.get(Calendar.YEAR);
 
             System.out.println("Name: " + worker.getName());
             System.out.println("Department: " + worker.getDepartment());
-            System.out.printf("Income for %d/%d: %.2f ", (month+1), year, worker.getIncome(month+1, year));
-        } catch (ParseException e) {
-
-        }
-
+            System.out.printf("Income for %d/%d: %.2f ", month, year, worker.getIncome(year, month));
+        } catch (ParseException e){}
+    
         sc.close();
     }
 }

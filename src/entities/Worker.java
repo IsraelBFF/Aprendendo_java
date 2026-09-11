@@ -3,6 +3,7 @@ package entities;
 import entities.enums.WorkerLevel;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Worker {
     private String name;
@@ -77,8 +78,15 @@ public class Worker {
     public double getIncome(int year, int month){
         double sum = baseSalary;
 
+        Calendar cal = Calendar.getInstance();
+
         for(HourContract c : contracts){
-            if (c.getDate().getYear() == year && c.getDate().getMonthValue() == month){
+            cal.setTime(c.getDate());
+
+            int c_month = 1 + cal.get(Calendar.MONTH);
+            int c_year = cal.get(Calendar.YEAR);
+
+            if (c_year == year && c_month == month){
                 sum += c.totalValue();
             }
         }
