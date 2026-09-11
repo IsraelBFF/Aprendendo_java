@@ -57,4 +57,10 @@ public class Poster {
     public void setLikes(Integer likes){
         this.likes = likes;
     }
+
+    // Methods
+
+    public void addComment(String comment){
+        comments.add(new Comment(comment));
+    }
 }
