@@ -1,7 +1,7 @@
 package application.Enum;
 
 import entities.entities_exercicio_fixacao.*;
-import entities.enums.*;
+import entities.enums.OrderStatus;
 
 import java.util.Scanner;
 import java.util.Date; 

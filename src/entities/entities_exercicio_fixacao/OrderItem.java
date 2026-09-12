@@ -1,7 +1,5 @@
 package entities.entities_exercicio_fixacao;
 
-import java.util.ArrayList;
-
 public class OrderItem {
     private Integer quantity;
     private Double price;
