@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class Reservation{
+public class Reservation1{
     private Integer roomNumber;
     private Date checkin;
     private Date checkout;
@@ -13,9 +13,9 @@ public class Reservation{
 
     // Builder
 
-    public Reservation(){}
+    public Reservation1(){}
 
-    public Reservation(Integer roomNumber, Date checkin, Date checkout){
+    public Reservation1(Integer roomNumber, Date checkin, Date checkout){
         this.roomNumber = roomNumber;
         this.checkin = checkin;
         this.checkout = checkout;

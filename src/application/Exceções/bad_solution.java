@@ -4,11 +4,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import entities.exceções.Reservation1;
+import entities.exceções.Reservation2;
 
 import java.util.Scanner;
 
-public class very_bad_solution {
+public class bad_solution {
     static void main(String[] args) throws ParseException{
         SimpleDateFormat f1 = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -26,7 +26,7 @@ public class very_bad_solution {
         if(!checkout.after(checkin)){
             IO.println("Error in reservation: Check-out date must be after check-in date");
         } else {
-            Reservation1 r1 = new Reservation1(roomNumber, checkin, checkout);
+            Reservation2 r1 = new Reservation2(roomNumber, checkin, checkout);
             IO.print(r1);
 
             IO.println("\n");
@@ -37,16 +37,12 @@ public class very_bad_solution {
             IO.print("Check-out date: ");
             checkout = f1.parse(sc.next());
 
-            Date now = new Date();
+            String reservation = r1.updateDates(checkin, checkout);
 
-            if(checkin.before(now) || checkout.before(now)){
-                IO.println("Error in reservation: Reservation dates for update must be future dates");
-            } else if (checkout.before(checkin)){
-                IO.println("Error in reservation: Check-out date must be after check-in date");
-            } else {
-                r1.updateDates(checkin, checkout);
-                IO.println(r1);
-            }
+            if (reservation != null){
+                IO.println(reservation);
+            } else
+                IO.print(r1);
         }
         sc.close(); 
     }
