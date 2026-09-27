@@ -11,6 +11,7 @@ public class Order {
 
     private Date moment = new Date();
     private OrderStatus status;
+    private Client cliente;
 
     private ArrayList<OrderItem> itens = new ArrayList<>();
 
@@ -39,6 +40,14 @@ public class Order {
         this.status = OrderStatus.valueOf(statusStr);
     }
 
+    public Client getClient(){
+        return cliente;
+    }
+
+    public void setClient(Client cliente){
+        this.cliente = cliente;
+    }
+
     // Methods
 
     public void addItem(OrderItem item){
@@ -57,6 +66,24 @@ public class Order {
         }
 
         return sum;
+    }
+
+    @Override 
+    public String toString(){
+        StringBuilder summary  = new StringBuilder();
+
+        summary.append("Order moment: ");
+        summary.append(momentFormat.format(moment) + "\n");
+        summary.append("Order status: ");
+        summary.append(status + "\n");
+        summary.append("Client: " + cliente.getName() + " (" + cliente.getBirthDate() + ") - " + cliente.getEmail() + "\n");
+        summary.append("Order items:" + "\n");
+
+        for (OrderItem i : itens) {summary.append(i + "\n");}
+
+        summary.append("Total price: $" + total());
+
+        return  summary.toString();
     }
     
 }
