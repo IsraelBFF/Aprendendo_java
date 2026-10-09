@@ -5,8 +5,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import entities.entities_interfaces.*;
-import services.BrazilTaxService;
-import services.RentalService;
+import services.interfac.BrazilTaxService;
+import services.interfac.RentalService;
 
 public class Program1 {
 

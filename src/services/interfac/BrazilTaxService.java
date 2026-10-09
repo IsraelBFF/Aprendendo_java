@@ -1,4 +1,4 @@
-package services;
+package services.interfac;
 
 public class BrazilTaxService implements TaxService{
     public double tax(double amount){
