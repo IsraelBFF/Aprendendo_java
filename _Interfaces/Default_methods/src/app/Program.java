@@ -3,7 +3,8 @@ package app;
 import java.util.Scanner;
 
 import models.interfaces.InterestService;
-import models.services.BrazilInterestService;
+// import models.services.BrazilInterestService;
+import models.services.UsaInterestService;
 
 public class Program {
     static void main(String[] args){
@@ -15,7 +16,7 @@ public class Program {
         int months = sc.nextInt();
         IO.println("Payment after " + months + " months:");
 
-        InterestService is = new BrazilInterestService(2.0);
+        InterestService is = new UsaInterestService(1.0);
 
         IO.println(String.format("%.2f", is.payment(amount, months)));
 
