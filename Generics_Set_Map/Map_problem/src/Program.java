@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Program {
@@ -14,7 +14,7 @@ public class Program {
 
         try(BufferedReader br = new BufferedReader(new FileReader(pathFile))){
            
-            Map<String, Integer> candidates = new HashMap<>();
+            Map<String, Integer> candidates = new LinkedHashMap<>();
             String line = br.readLine();
 
             while (line != null){
@@ -31,11 +31,8 @@ public class Program {
                 line = br.readLine();
             }
 
-            for(Map.Entry<String, Integer> candidate : candidates.entrySet()){
-                String name = candidate.getKey();
-                Integer votos = candidate.getValue();
-
-                IO.println(name + ": " + votos);
+            for(String key : candidates.keySet()){
+                IO.println(key + ": " + candidates.get(key));
             }
             
 
